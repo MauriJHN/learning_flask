@@ -1,8 +1,16 @@
 body {
-    color: blue;
+    background-color: #090909;
+    color: #fff;
     font-family: Arial;
-    background-color: cyan;
     text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    text-shadow: 0 0 20px #0000ff;
 }
 
 .container {
@@ -15,4 +23,28 @@ body {
     border: solid 2px #0f0f0f;
     font-size: 18px;
     text-align: center;
+}
+
+.papa {
+    background-color: #1f1f1f;
+    color: #fff;
+    padding: 10px;
+    width: 500px;
+    margin: 0 auto;
+    border: double 2px #cccccc;
+    border-radius: 10px;
+}
+
+.papa a {
+    padding: 2px;
+    color: #000000;
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    background-color: #ccc;
+    font-weight: bolder;
+}
+
+.papa a:hover {
+    text-shadow: 0 0 20px #00ff00;
+    background-color: #eee;
 }

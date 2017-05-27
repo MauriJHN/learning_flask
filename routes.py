@@ -1,4 +1,7 @@
+import os
+import sqlite3
 from flask import Flask, render_template, url_for
+from utils import submit
 
 app = Flask(__name__)
 
@@ -8,13 +11,18 @@ def index():
 
 @app.route('/about')
 def about():
+
     return render_template('about.html')
 
+@app.route('/pa')
+def papa():
+    return render_template('papa.html')
+
+# snippet: enables stylesheet update
 @app.context_processor
 def override_url_for():
     return dict(url_for=dated_url_for)
 
-import os
 
 def dated_url_for(endpoint, **values):
     if endpoint == 'static':
@@ -24,6 +32,8 @@ def dated_url_for(endpoint, **values):
                                      endpoint, filename)
             values['q'] = int(os.stat(file_path).st_mtime)
     return url_for(endpoint, **values)
+# end of snippet
+
 
 if __name__=='__main__':
     app.run(debug=True)
