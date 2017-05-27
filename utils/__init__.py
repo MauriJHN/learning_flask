@@ -1,5 +1,7 @@
 import sqlite3
 
+def start_database():
+    conn = sqlite3.connect('database.db', timeout=None, isolation_level=None, detect_types=None, factory=None)
 
 def submit(sql):
     conn = sqlite3.connect('database.db', timeout=None, isolation_level=None, detect_types=None, factory=None)

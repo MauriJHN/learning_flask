@@ -1,6 +1,6 @@
 import os
 import sqlite3
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request
 from utils import submit
 
 app = Flask(__name__)
@@ -11,12 +11,21 @@ def index():
 
 @app.route('/about')
 def about():
-
     return render_template('about.html')
 
 @app.route('/pa')
 def papa():
     return render_template('papa.html')
+
+@app.route('/log', methods=['POST'])
+def create():
+    objects = request.form
+    
+    return '<h1>All is well</h1>'
+
+@app.route('/test')
+def test():
+    return render_template('input_test.html')
 
 # snippet: enables stylesheet update
 @app.context_processor
