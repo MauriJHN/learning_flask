@@ -3,13 +3,17 @@
 <html>
 
 <head>
-    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet" >
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" >
     <title>Mauri's Application</title>
 </head>
 
 <body>
 
-    <h1>Mauri's Application</h1>
+    <div class='container'>
+        <div class='page-header'>
+            <h1>Mauri's Application</h1>
+        </div>
+    </div>
 
     {% block content %}
     {% endblock %}
